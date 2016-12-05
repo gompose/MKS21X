@@ -1,15 +1,15 @@
-public class Books{
+public class Book{
     public String author;
     public String title;
     public String isbn;
     
-    public Books() {
+    public Book() {
         author = "";
         title = "";
         isbn = "";
     }
     
-    public Books(String author, String title, String isbn) {
+    public Book(String author, String title, String isbn) {
         this.author = author;
         this.title = title;
         this.isbn = isbn;
