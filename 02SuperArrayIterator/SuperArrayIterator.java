@@ -1,8 +1,11 @@
 // GOAL: Make SuperArray work with the enhanced for-loop.
 import java.util.Iterator;
+import java.util.*;
+import java.*;
+import java.lang.*;
 public class SuperArrayIterator implements Iterator<String> {
     //Instance Variables
-    int index = 0;
+    int index = -1;
     SuperArray a;
     //Constructor
     public SuperArrayIterator(SuperArray x) {
@@ -12,20 +15,21 @@ public class SuperArrayIterator implements Iterator<String> {
     //Methods
 
     public boolean hasNext() {
-	return index + 1 < a.length;
+	return index + 1 < a.size() && a.get(index + 1) != null;
 
     }
     public String next() {
 	if (hasNext()) {
 	    index++;
 	}else{
-	    throw NoSuchElementException("No elements left to iterate");
+	    throw new NoSuchElementException("No elements left to iterate");
 	}
 
-	return a[index];
+	return a.get(index);
+	//return "" + index; 
     }
     public void remove() {
-	throw UnsupportedOperationException();
+	throw new UnsupportedOperationException();
     }
     
 }
