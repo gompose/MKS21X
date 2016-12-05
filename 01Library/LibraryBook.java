@@ -17,4 +17,9 @@ public abstract class LibraryBook extends Book implements Comparable<LibraryBook
   public abstract String circulationStatus();
   // NOTE: Unfinished, still need comparable and etc.
   
+  public String toString(){
+    return "Title: " + title + "\n" + "Author: " + author + "\n" + "ISBN: " + isbn + "\n" + "CallNumber: " + callNumber;
+  }
+  
+  
 }
