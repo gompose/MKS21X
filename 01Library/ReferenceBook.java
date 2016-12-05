@@ -12,6 +12,10 @@ public class ReferenceBook extends LibraryBook{
   public String getCollection() {
     return collection;
   }
+  public void setCollection(String collection){
+    this.collection = collection;
+  }
+  
   public void checkout(String patron, String due){
     throw new UnsupportedOperationException("Cannot checkout a Reference Book");
   }
