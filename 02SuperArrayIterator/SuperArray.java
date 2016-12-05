@@ -5,8 +5,7 @@ import java.lang.*;
 
 public class SuperArray implements Iterable<String>{
     private String[] a;
-    private int size;
-  
+    pri vate int size;
     //0
     //constructor make an empty superArray should make size 0, 
     //but the data capacity 10.
