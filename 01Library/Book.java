@@ -35,5 +35,10 @@ public class Book{
         this.title = title;
     }
     
+    public String toString() {
+        return "Title: " + title + "\n" + "Author: " + author + "\n" + "ISBN" + isbn;
+    }
+    
+    
     
 }
