@@ -2,10 +2,11 @@ public class ReferenceBook extends LibraryBook{
   private String collection;
   
   public ReferenceBook(String author, String title, String isbn, String callNumber, String collection) {
-    this.author = author;
-    this.title = title;
-    this.isbn = isbn;
-    this.callNumber = callNumber;
+      super(author, title, isbn, callNumber);
+      //setAuthor(author);
+      //setTitle(title);
+      //setIsbn(isbn);
+      //setCallNumber(callNumber);
     this.collection = collection;
   }
   
@@ -26,7 +27,7 @@ public class ReferenceBook extends LibraryBook{
     return "non-circulating reference book";
   }
   public String toString() {
-    return "Title: " + title + "\n" + "Author: " + author + "\n" + "ISBN: " + isbn + "\n" + "CallNumber: " + callNumber + "\n" + "Collection: " + collection;
+      return "Title: " + getTitle() + "\n" + "Author: " + getAuthor() + "\n" + "ISBN: " + getIsbn() + "\n" + "CallNumber: " + getCallNumber() + "\n" + "Collection: " + collection;
   }
   
   

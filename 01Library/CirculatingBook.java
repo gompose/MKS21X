@@ -4,10 +4,11 @@ public class CirculatingBook extends LibraryBook {
   private String dueDate;
   
   public CirculatingBook(String author, String title, String isbn, String callNumber){
-    this.title = title;
-    this.author = author; 
-    this.isbn = isbn;
-    this.callNumber = callNumber;
+      super(author, title, isbn, callNumber);
+	  //setAuthor(author);
+	  //setTitle(title); 
+	  //setIsbn(isbn);
+	  //setCallNumber(callNumber);
   }
   public String getCurrentHolder() {
     return currentHolder;
@@ -39,7 +40,7 @@ public class CirculatingBook extends LibraryBook {
     return a;
   }
   public String toString() {
-    return "Title: " + title + "\n" + "Author: " + author + "\n" + "ISBN: " + isbn + "\n" + "CallNumber: " + callNumber + "\n" + "CirculationStatus: " + circulationStatus();
+      return "Title: " + getTitle() + "\n" + "Author: " + getAuthor() + "\n" + "ISBN: " + getIsbn() + "\n" + "CallNumber: " + getCallNumber() + "\n" + "CirculationStatus: " + circulationStatus();
   }
   
     
