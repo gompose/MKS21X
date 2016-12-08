@@ -59,5 +59,5 @@ public class Barcode implements Comparable<Barcode>{
   public int compareTo(Barcode other){
       return (_zip + _checkDigit).compareTo(other.toString().subString(0, 7);
   }
-    
+     
 }
