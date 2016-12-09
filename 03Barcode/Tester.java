@@ -7,6 +7,10 @@ public class Tester {
 	System.out.println(a);
 	System.out.println(b);
 	System.out.println(c);
+	System.out.println(a.compareTo(a));
+	System.out.println(a.compareTo(b));
+	System.out.println(b.compareTo(a));
+	
 
 
     }

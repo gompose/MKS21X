@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Barcode implements Comparable<Barcode>{
 // instance variables
    private String _zip;
@@ -11,9 +13,12 @@ public class Barcode implements Comparable<Barcode>{
 //               or zip contains a non digit
 //               _zip and _checkDigit are initialized.
   public Barcode(String zip) {
+      if (zip.length() != 5) {
+	  throw new IllegalArgumentException("Zip is too long or short");
+      }
       _zip = zip;
       _checkDigit = checkSum() % 10;
-      barcodify(_zip);
+      toCode(_zip);
 }
 
 // postcondition: Creates a copy of a bar code.
@@ -23,7 +28,7 @@ public class Barcode implements Comparable<Barcode>{
       
 }
 
-  private void barcodify(String zip) {
+  private static String toCode(String zip) {
       int x = 0;
       String barcode = "|";
       for (x = 0; x < zip.length(); x++) {
@@ -31,7 +36,7 @@ public class Barcode implements Comparable<Barcode>{
       }
       barcode += _code[_checkDigit];
       barcode += "|";
-      _barcode = barcode;
+      return barcode;
 
   }
 
@@ -56,7 +61,7 @@ public class Barcode implements Comparable<Barcode>{
 
 // postcondition: compares the zip + checkdigit, in numerical order. 
   public int compareTo(Barcode other){
-      return (_zip + _checkDigit).compareTo(other.toString().substring(0, 7));
+      return (_zip + _checkDigit).compareTo(other.toString().substring(0, 6));
   }
      
 }
