@@ -18,7 +18,7 @@ public class Barcode implements Comparable<Barcode>{
       }
       _zip = zip;
       _checkDigit = checkSum() % 10;
-      toCode(_zip);
+      _barcode = toCode(_zip);
 }
 
 // postcondition: Creates a copy of a bar code.
@@ -31,10 +31,17 @@ public class Barcode implements Comparable<Barcode>{
   private static String toCode(String zip) {
       int x = 0;
       String barcode = "|";
+      int counter = 0;
+      int index;
       for (x = 0; x < zip.length(); x++) {
 	  barcode += _code[Integer.parseInt(zip.substring(x, x+1))];
       }
-      barcode += _code[_checkDigit];
+      x = 0;
+      for (x = 0; x < zip.length(); x++) {
+	  counter += Integer.parseInt(zip.substring(x, x+1));
+      }
+      index = counter % 10; 
+      barcode += _code[index];
       barcode += "|";
       return barcode;
 
@@ -63,5 +70,30 @@ public class Barcode implements Comparable<Barcode>{
   public int compareTo(Barcode other){
       return (_zip + _checkDigit).compareTo(other.toString().substring(0, 6));
   }
-     
+  // Left off over here, index out of bounds somewhere in toZip.
+  public static String toZip(String code) {
+      String newcode = code.substring(1);
+      newcode = code.substring(0, code.length() - 6);
+      //Debugging System.out.println();
+      System.out.println(newcode);
+      //Everything up to here works
+      String zip = "";
+      int x = 0;
+      int i = 0;
+      for (x = 0; x < code.length(); x++) {
+	  i = 0;
+	  newcode = newcode.substring(5);
+	  for (i = 0; i < _code.length; i++) {
+
+	      if (_code[i].compareTo(newcode.substring(0, 5)) == 0) {
+		  zip += i + "";
+		  		
+	      }	 
+	  }
+      }
+      return zip;	  
+  }
+      
+
+
 }
