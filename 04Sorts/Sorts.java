@@ -20,4 +20,32 @@ public class Sorts{
 	    index = indexhold;
 	    data[indexhold] = hold;
 	    index++;
+
+	}
+    }
+
+    public static void insertionSort(int[] data) {
+	//
+    }
+    
+    private static boolean sorted(int[] data) {
+	boolean truth = true;
+	int hold = data[0];
+	for (x = 0; x < data.length - 1; x++) {
+	    if (hold !<= data[x]) {
+		truth = false;
+	    }
+	    hold = data[x];
+	}
+	return truth;
+    }
+    public static void bubbleSort(int[] data) {
+	int hold = data[0];
+	while (!(sorted(data))) {
+	    for (x = 0; x < data.length - 1; x++) {
+		if (hold < data[x]) {
+		    data[x] = hold
 	    
+
+
+    }
