@@ -41,11 +41,22 @@ public class Sorts{
     }
     public static void bubbleSort(int[] data) {
 	int hold = data[0];
-	while (!(sorted(data))) {
+	boolean sort = Sorts.sorted(data);
+	while (!(sort)) {
 	    for (x = 0; x < data.length - 1; x++) {
-		if (hold < data[x]) {
-		    data[x] = hold
-	    
+		if (hold > data[x]) {
+		    int x = data[x];
+		    data[x] = hold;
+		    data[x - 1] = x;
 
+		}
+		hold = data[x];
+	    }
+	    sort = Sorts.sorted(data);
 
+	}
     }
+		
+
+
+}
