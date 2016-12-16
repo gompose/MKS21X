@@ -25,6 +25,14 @@ public class Sorts{
     }
 
     public static void insertionSort(int[] data) {
+	int sortedindex = 1;
+	int hold;
+	while (!(sortedIndex <= data.length)){
+		hold = data[sortedIndex + 1];
+		int x = 0;
+		while (x < sortedIndex) {
+			if (hold < data[x]) {
+				
 	//
     }
     
