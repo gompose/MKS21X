@@ -9,7 +9,10 @@ public class Sorts{
     public static void selectionSort(int[] data) {
 	int hold = 0;
 	int indexhold;
-	int index
+	int index;
+	if (data.length == 0) {
+	    return;
+	}
 	for (index = 0; index < data.length - 1; index ++) {
 	    for (index; index < data.length - 1; index ++) {
 		indexhold = index;
@@ -53,6 +56,9 @@ public class Sorts{
     public static void bubbleSort(int[] data) {
 	int hold = data[0];
 	boolean sort = Sorts.sorted(data);
+	if (data.length == 0) {
+	    return;
+	}
 	while (!(sort)) {
 	    for (x = 0; x < data.length - 1; x++) {
 		if (hold > data[x]) {
